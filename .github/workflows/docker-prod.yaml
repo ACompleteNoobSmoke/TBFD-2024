@@ -5,6 +5,13 @@ run-name: "Push To Docker (PROD)"
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        type: choice
+        description: Environment
+        options:
+          - prod
+          - qa
+          - dev
       version-number:
         description: Version Number
         type: number
@@ -51,4 +58,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: acompletenoobsmoke/filmdb:${{inputs.version-number}}
+          tags: acompletenoobsmoke/filmdb_${{inputs.environment}}:${{inputs.version-number}}
