@@ -1,0 +1,28 @@
+name: Build & Test
+
+run-name: "Build & Test -- ${{github.actor}} - ${{github.ref}}"
+
+on:
+  push:
+    branches:
+      - '*feature/*'
+      - 'main'
+      - 'dev'
+      - 'qa'
+
+
+jobs:
+  build-test:
+    name: "Build & Test"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Setup Java 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+          cache: maven
+      - name: Maven Install
+        run: mvn clean install
