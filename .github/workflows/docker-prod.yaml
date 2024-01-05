@@ -1,6 +1,6 @@
-name: Docker -- PROD
+name: Docker
 
-run-name: "Push To Docker (PROD)"
+run-name: "Push To Docker"
 
 on:
   workflow_dispatch:
