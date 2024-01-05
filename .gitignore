@@ -31,3 +31,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### SQL ###
+FILMSQL.sql
+
+info.txt
+
+!**/src/resources/application.properties
+
